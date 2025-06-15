@@ -35,3 +35,23 @@ find ./ -cmin 1
 # 파일 변경 상태 확인
 stat amin.txt | grep Change
 
+echo "-ctime n 테스트를 사용하는 경우"
+# 현재 시각 확인
+date
+# 24시간 내에 수정된 파일 검색
+find ./ -ctime 0
+
+echo "-mmin n 테스트를 사용하는 경우"
+# 현재 시각 확인
+date
+# 15분 전에 수정된 파일 검색
+find ./ -mmin 15
+# 파일 수정 시간 확인
+stat amin.txt | grep Modify
+
+echo "-mtime n 테스트를 사용하는 경우"
+# 현재 시각 확인
+date
+# 24시간 내에 수정된 파일 검색
+find ./ -mtime 0
+

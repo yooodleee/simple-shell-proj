@@ -10,3 +10,11 @@ tar xvf Easy-Shell-Script/04.Find/Script.tar
 cd Script
 # 디렉터리 파일 목록 확인
 ls -l
+
+echo "-admin n 테스트를 사용하는 경우"
+# 현재 시각 확인
+date
+# 1분 내에 접근한 파일 검색
+find ./ -admin 1
+# 해당 파일의 접근 시각 확인
+stat admin.txt | grep Access

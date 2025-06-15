@@ -18,3 +18,10 @@ date
 find ./ -admin 1
 # 해당 파일의 접근 시각 확인
 stat admin.txt | grep Access
+
+echo "-atime n 테스트를 사용하는 경우"
+# 현재 시각 확인
+date
+# 1x24 시간 전에 변경된 파일 검색
+find ./ -atime 1
+

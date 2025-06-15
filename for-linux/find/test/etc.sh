@@ -22,3 +22,9 @@ find ./ -empty
 echo "-size n[cwbkMG] 테스트를 사용하는 경우"
 # 파일 사이즈가 65K인 파일 검색
 find ./ -size 65k
+
+
+echo "파일이 변경되고, 5일 안에 접근한 파일 검색"
+find ./ -used 5
+# stat 명령어로 파일 상태 확인
+stat Separator.txt

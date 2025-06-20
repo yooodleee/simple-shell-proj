@@ -13,7 +13,7 @@ then
   Password=($2)
 
   # for 문을 이용하여 사용자 계정 생성
-  for (( i=0; ${UserList[@]}; i++ ))
+  for (( i=0; ${#UserList[@]}; i++ ))
   do
     # if 문을 사용하여 사용자 계정이 있는지 확인
     if [[ $(cat /etc/passwd | grep ${UserList[$i]} | wc -l) == 0 ]]

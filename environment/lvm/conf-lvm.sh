@@ -21,17 +21,17 @@ if [[ -z $pw ]]; then echo -e "\nYou need a password for this script. Please ret
 for node in $nodes
 do
   echo -e "\n$node"
-  conf_chk=$(sshpass -p $pw ssh root@node $cmd1)
+  conf_chk=$(sshpass -p $pw ssh root@$node $cmd1)
   if [[ conf_chk -eq 0 ]]; then
     # 설정 변경 전 백업
     echo "lvm.conf backup"
-    sshpass -p $pw ssh root@node $cmd2
+    sshpass -p $pw ssh root@$node $cmd2
     # sed를 이용해 설정 변경
     echo "lvm.conf reconfiguration"
-    sshpass -p $pw ssh root@node $cmd3
+    sshpass -p $pw ssh root@$node $cmd3
     # lvm 관련 서비스 재시작
     echo "lvm relates service restart"
-    sshpass -p $pw root@node $cmd4
+    sshpass -p $pw root@$node $cmd4
   fi
 done
 
